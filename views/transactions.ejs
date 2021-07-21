@@ -1,0 +1,43 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="card-header">
+                    <h1>All Transactions History</h1>
+                </div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                        
+                          <th scope="col"> The Transaction Took Place between</th>
+                          <th scope="col">Date of Transcation</th>
+                      
+                        
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% if(a.length > 0) { %>
+                            <% for(let c of a) {%>
+                        <tr>
+                          
+                              
+                          <th scope="col">  <%= c.payment %></th>
+                          <th scope="col"><%= c.Date %></th>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                      <% } else { %>
+                        <li class="list-group-item" style="text-transform: capitalize;">
+                            Sorry!!!! No transactions Yet........
+                        </li>
+                        <% } %>
+              </table>
+               
+           
+            
+              
+                     
+           
+                  
+        
+   </div>

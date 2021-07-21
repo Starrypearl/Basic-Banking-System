@@ -1,0 +1,58 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="container">
+                    <div>
+                        <h1>Transfer Money</h1>
+                    </div>
+                    <div class="card-body">
+                        <!--novalidate  is boolen to say that the submitted form is not validate  when  a function is called in layouts / layout where the vaildation logic takes place-->
+                        <form action="/customer" method="POST" class="needs-validation" novalidate>
+                            <div class="input-group mb-3">
+                                <label class="input-group" for="form">Sender: </label>
+                                <select class="form-select" name="From" id="from">
+                                    <% for(let c of cus) { %>
+                                        <option style="text-transform: capitalize;" value="<%= c.username %>"
+                                            <%=c.username===cs.username?'selected':'disabled' %> ><%= c.username %>
+                                        </option> 
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <label class="input-group" for="cati">Transfer to:</label>
+                                <select class="form-select" name="username" id="cati">
+                                    <% for(let c of cus) { %>
+                                        <option style="text-transform: capitalize;" value="<%= c.username %>"
+                                            <%=c.username===cs.username?'disabled':'' %> ><%= c.username %>
+                                        </option> 
+                                        <% } %>
+                                </select>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group">Amount  </span>
+                                <input type="number" placeholder="Amount should be in $(dollars)." class="form-control" name="Amount" required min="0">
+                                
+                                <div class="valid-feedback">
+                                     </div>
+                                  <div class="invalid-feedback">
+                                    Enter Amount
+                                  </div>
+                            </div>
+                            <div class="input-group mb-3 ">
+                               
+                                <div class="valid-feedback">
+                                
+                                  </div>
+                                  <div class="invalid-feedback">
+                                    Please  check all vales are valid
+                                  </div>
+                            </div>
+                            <button class="btn btn-success">Transfer</button>
+                            <a class="btn btn-primary" href="/customer">Back to Home</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
