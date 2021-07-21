@@ -9,7 +9,7 @@ const Datab = require("./models/AllDatabs");
 const AppError = require("./views/AppError");
 
 const PORT = process.env.PORT || 3000;
-const dbURL ="mongodb+srv://Ryu:WdzaXBay0wMJWkeo@cluster0.gqyqk.mongodb.net/bank_management?retryWrites=true&w=majority";
+connection link
 
 //database connnection
 mongoose.connect( dbURL, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false })
